@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Text Editor with Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Text Editor</h1>
+  
+  <textarea id="editor" placeholder="Type your text here..."></textarea>
+  <br />
+  <button id="downloadBtn">Download as .txt</button>
+
+  <script>
+    const editor = document.getElementById('editor');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    downloadBtn.addEventListener('click', () => {
+      const text = editor.value;
+      const filename = 'myfile.txt';
+
+      const encodedText = encodeURIComponent(text);
+      const dataUri = 'data:text/plain;charset=utf-8,' + encodedText;
+
+      const a = document.createElement('a');
+      a.href = dataUri;
+      a.download = filename;
+      document.body.appendChild(a); // Required for Firefox
+      a.click();
+      document.body.removeChild(a);
+    });
+  </script>
+
+</body>
+</html>

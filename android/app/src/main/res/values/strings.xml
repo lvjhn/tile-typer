@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tile Typer</string>
+    <string name="title_activity_main">Tile Typer</string>
+    <string name="package_name">com.midst.tiletyper</string>
+    <string name="custom_url_scheme">com.midst.tiletyper</string>
+</resources>
