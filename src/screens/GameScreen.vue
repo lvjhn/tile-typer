@@ -397,11 +397,11 @@ function checkGame() {
 
 
             else if(subpage == "arcade") {
-                if(score.value >= 10000) {
+                if(score.value >= 7000) {
                     rewardMedal.value.name = "DIAMOND MEDAL"
                     rewardMedal.value.icon = "diamond-medal"
                 }
-                else if(score.value >= 7000) {
+                else if(score.value >= 5000) {
                     rewardMedal.value.name = "GOLD MEDAL"
                     rewardMedal.value.icon = "gold-medal"
                 }
